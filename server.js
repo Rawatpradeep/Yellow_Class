@@ -22,6 +22,21 @@ const resolvers = resolver
 const server = new ApolloServer({
     typeDefs, resolvers,
     context: contextMiddleware,
+    cors: {
+        credentials: true,
+        origin: (origin, callback) => {
+            const whitelist = [
+                "http://site1.com",
+                "https://lets-group-chats.herokuapp.com/"
+            ];
+
+            if (whitelist.indexOf(origin) !== -1) {
+                callback(null, true)
+            } else {
+                callback(new Error("Not allowed by CORS"))
+            }
+        }
+    }
 });
 
 // The `listen` method launches a web server.
