@@ -4,7 +4,7 @@ const Mongo = require("./libs/mongo");
 const contextMiddleware = require('./libs/middleWare')
 const userTypeDefs = require("./app/graphql/typeDefs/user")
 const resolver = require("./app/graphql/resolver")
-
+require("dotenv").config();
 const mongo = new Mongo();
 
 var conn = (async function () {
@@ -28,9 +28,9 @@ const server = new ApolloServer({
         origin: true
     }
 });
-
+console.log('process.env.PORT------------- :>> ', process.env.PORT);
 // The `listen` method launches a web server.
-server.listen({ port: 5000 }).then(({ url }) => {
+server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
     console.log(`🚀  Server ready at ${url}`);
 });
 
