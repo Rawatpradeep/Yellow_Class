@@ -1,0 +1,30 @@
+{
+  "name": "yellow_class",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon ./server.js ",
+    "seeder": "node ./app/seeders/userSeeder.js && node ./app/seeders/groupSeeder.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rawatpradeep/Yellow_Class.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rawatpradeep/Yellow_Class/issues"
+  },
+  "homepage": "https://github.com/Rawatpradeep/Yellow_Class#readme",
+  "dependencies": {
+    "apollo-server": "^2.24.1",
+    "bcrypt": "^5.0.1",
+    "graphql": "^15.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.12.10",
+    "nodemon": "^2.0.7"
+  }
+}
