@@ -23,6 +23,7 @@ const server = new ApolloServer({
     typeDefs, resolvers,
     context: contextMiddleware,
     playground: true,
+    introspection: true,
     cors: {
         credentials: true,
         origin: true
